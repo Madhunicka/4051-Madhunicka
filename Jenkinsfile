@@ -2,16 +2,21 @@
     agent any
 
     stages {
+      stage('Checkout')
+      {
+        steps{
+          git 'https://github.com/Madhunicka/4051-Madhunicka'
+        }
+      }
 
-
-         stage('build'){
+         stage('Dockerize'){
       steps {
         sh 'sudo docker build -t calculator-app .'
       }
     }
-    stage('run'){
+    stage('Run Container'){
       steps{
-        sh 'sudo docker run -p 4201:4200 calculator-app'
+        sh 'sudo docker run -d -p 4201:4200 calculator-app'
       }
     }
     }
