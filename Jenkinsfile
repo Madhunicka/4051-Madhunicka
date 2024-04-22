@@ -2,12 +2,7 @@
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the code from SCM
-                git 'https://github.com/Madhunicka/4051-Madhunicka'
-            }
-        }
+
 
          stage('build'){
       steps {
